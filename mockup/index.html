@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.6.6/dragula.min.css"
+      integrity="sha512-49xW99xceMN8dDoWaoCaXvuVMjnUctHv/jOlZxzFSMJYhqDZmSF/UnM6pLJjQu0YEBLSdO1DP0er6rUdm8/VqA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.6.6/dragula.min.js"
+      integrity="sha512-MrA7WH8h42LMq8GWxQGmWjrtalBjrfIzCQ+i2EZA26cZ7OBiBd/Uct5S3NP9IBqKx5b+MMNH1PhzTsk6J9nPQQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navigation">
+      <img
+        class="navigation__logo"
+        src="https://cdn.worldvectorlogo.com/logos/trello.svg"
+      />
+      <div>
+        <span class="navigation__icon">Icon</span>
+        <span class="navigation__icon">Icon</span>
+        <span class="navigation__icon">Icon</span>
+      </div>
+    </nav>
+    <main>
+      <div class="board">
+        <div class="list" id="left">
+          <div class="list__title">
+            <b>Pendente</b>
+            <span>...</span>
+          </div>
+          <div class="card" draggable="true">
+            <div class="badge">
+              <span>&nbsp;</span>
+            </div>
+            <p>Redes</p>
+            <span class="card__icon">&nbsp;</span>
+          </div>
+          <div class="card">
+            <div class="badge">
+              <span>&nbsp;</span>
+            </div>
+            <p>Redes</p>
+            <span class="card__icon">&nbsp;</span>
+          </div>
+          <div class="card">
+            <div class="badge">
+              <span>&nbsp;</span>
+            </div>
+            <p>Redes</p>
+            <span class="card__icon">&nbsp;</span>
+          </div>
+          <div class="card__btn">
+            <span>+ Adicionar cartão</span>
+          </div>
+        </div>
+        <div class="list" id="right">
+          <div class="list__title">
+            <b>Pendente</b>
+            <span>...</span>
+          </div>
+          <div class="card">
+            <div class="badge">
+              <span>&nbsp;</span>
+            </div>
+            <p>Redes</p>
+            <span class="card__icon">&nbsp;</span>
+          </div>
+        </div>
+        <div class="list__action">
+          <span class="list__action-btn">+ Adicionar outra lista</span>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+<script>
+  dragula([document.getElementById("left"), document.getElementById("right")], {
+    accepts: function (el, target, source, sibling) {
+      return !el.className.includes("list__title");
+    },
+    moves: function (el, source, handle, sibling) {
+      return !el.className.includes("list__title");
+    },
+  }).on("drop", function (el, target, source, sibling) {
+    console.log(el, target, source);
+  });
+</script>
