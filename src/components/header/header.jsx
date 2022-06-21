@@ -8,10 +8,10 @@ import {
 
 export default function Header() {
   return (
-    <nav class="navigation">
+    <nav className="navigation">
       <img
         alt="Trello Logo"
-        class="navigation__logo"
+        className="navigation__logo"
         src="https://cdn.worldvectorlogo.com/logos/trello.svg"
       />
       <div className="navigation-box">
