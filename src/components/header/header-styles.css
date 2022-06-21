@@ -1,0 +1,40 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  background-color: #af792c;
+  padding: 5px;
+  color: #ffff;
+  align-items: center;
+}
+
+.navigation__icon {
+  margin-left: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.navigation__icon:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.navigation__logo {
+  height: 36px;
+}
+
+.navigation-box {
+  display: flex;
+  align-items: center;
+}
+
+.navigation__search-box {
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.navigation__search-box--icon {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 2px;
+  cursor: pointer;
+}
