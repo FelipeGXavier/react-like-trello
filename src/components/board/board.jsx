@@ -21,6 +21,14 @@ export default function Board() {
     },
   ]);
 
+  const handleNewCard = (card, index) => {
+    const contentElement = [...content];
+    const contentTarget = contentElement[index];
+    contentTarget.cards = [...contentTarget.cards, card];
+    contentElement[index] = contentTarget;
+    setContent(contentElement);
+  };
+
   useEffect(() => {
     const listIds = content.map((element) => element.id);
     const listElements = [];
@@ -49,10 +57,12 @@ export default function Board() {
   return (
     <main>
       <div className="board">
-        {content.map((element) => {
+        {content.map((element, index) => {
           return (
             <List
-              key={element.id}
+              key={index}
+              handleNewCard={handleNewCard}
+              index={index}
               title={element.title}
               id={element.id}
               cards={element.cards}

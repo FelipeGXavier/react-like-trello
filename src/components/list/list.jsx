@@ -10,7 +10,22 @@ export default function List(props) {
   const [showInputCard, setShowInputCard] = useState(false);
   const [inputCard, setInputCard] = useState("");
 
-  const addCard = () => {};
+  const addCard = (e) => {
+    if (inputCard.value.length <= 3) {
+      alert("O título deve conter ao menos 4 caracteres");
+      return;
+    }
+    const cardWithTitleExists = props.cards.some(
+      (card) => card.title === inputCard.value
+    );
+    if (cardWithTitleExists) {
+      alert("Já existe uma tarefa com esse título");
+      return;
+    }
+    const card = { title: inputCard.value, level: "warn" };
+    props.handleNewCard(card, props.index);
+    setShowInputCard(false);
+  };
 
   return (
     <div className="list">
