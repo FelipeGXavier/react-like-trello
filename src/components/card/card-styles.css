@@ -11,6 +11,20 @@
   margin-top: 10px;
 }
 
+.action-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-box__icon {
+  margin-left: 4px;
+}
+
+.action-box__icon:hover {
+  background-color: wheat;
+}
+
 .badge-warn {
   width: 40px;
   height: 8px;

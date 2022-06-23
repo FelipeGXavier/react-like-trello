@@ -29,6 +29,12 @@ export default function Board() {
     setContent(contentElement);
   };
 
+  const handleDeleteCard = (index, indexList) => {
+    const contentElement = [...content];
+    contentElement[indexList].cards.splice(index);
+    setContent(contentElement);
+  };
+
   useEffect(() => {
     const listIds = content.map((element) => element.id);
     const listElements = [];
@@ -61,6 +67,7 @@ export default function Board() {
           return (
             <List
               key={index}
+              handleDeleteCard={handleDeleteCard}
               handleNewCard={handleNewCard}
               index={index}
               title={element.title}

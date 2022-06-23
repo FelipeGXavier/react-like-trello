@@ -34,9 +34,16 @@ export default function List(props) {
         <span>...</span>
       </div>
       <div id={props.id}>
-        {props.cards.map((card) => {
+        {props.cards.map((card, index) => {
           return (
-            <Card key={card.title} level={card.level} title={card.title}></Card>
+            <Card
+              handleDeleteCard={props.handleDeleteCard}
+              listIndex={props.index}
+              index={index}
+              key={card.title}
+              level={card.level}
+              title={card.title}
+            ></Card>
           );
         })}
       </div>
