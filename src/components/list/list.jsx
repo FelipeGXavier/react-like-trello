@@ -38,6 +38,8 @@ export default function List(props) {
           return (
             <Card
               handleDeleteCard={props.handleDeleteCard}
+              openModal={props.openModal}
+              handleCardUpdate={props.handleCardUpdate}
               listIndex={props.index}
               index={index}
               key={card.title}

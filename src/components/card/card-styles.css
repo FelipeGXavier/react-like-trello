@@ -17,11 +17,11 @@
   align-items: center;
 }
 
-.action-box__icon {
+.icon-hover {
   margin-left: 4px;
 }
 
-.action-box__icon:hover {
+.icon-hover:hover {
   background-color: wheat;
 }
 
@@ -39,4 +39,27 @@
   border-radius: 4px;
   margin-bottom: 4px;
   background-color: red;
+}
+
+.modal-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-box > h1 {
+  font-size: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group > input {
+  margin-bottom: 5px;
+}
+
+.modal-form-btn {
+  margin-top: 10px;
 }
